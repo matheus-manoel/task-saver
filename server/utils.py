@@ -16,16 +16,19 @@ def create_task(task_model, data):
                 'name': '',
                 'hours': 0,
                 'minutes': 0,
-                'date_time': dt.datetime.now
+                'date_time': dt.datetime.now()
                 }
 
-        for key in list(new_task.keys):
+        for key in new_task:
             if key in data:
                 new_task[key] = data[key]
 
         task = task_model(**new_task)
+        print(new_task)
         task.save()
 
-        return new_task.to_json, 201
-    except:
+        return task.to_json(), 201
+    except Exception as e:
+        # todo: Add raccoon_log
+        print(e)
         return 'Error on creating task.', 400

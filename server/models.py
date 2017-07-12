@@ -1,7 +1,7 @@
 import mongoengine as me
 
 
-class Task(me.EmbeddedDocument):
+class Task(me.Document):
     name = me.StringField()
     hours = me.IntField()
     minutes = me.IntField()
