@@ -10,3 +10,5 @@ def create_routes(blueprint, request, utils, models):
             return utils.get_tasks(models.Task)
         elif request.method == 'POST':
             return utils.create_task(models.Task, request.get_json())
+
+    return api

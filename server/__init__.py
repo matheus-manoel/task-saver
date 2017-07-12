@@ -16,6 +16,6 @@ def create_app():
     }
 
     db = MongoEngine()
-    db.initi_app()
+    db.init_app(app)
 
     return app
