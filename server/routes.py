@@ -1,4 +1,4 @@
-def create_routes(blueprint, request, utils, models):
+def create_api_routes(blueprint, request, utils, models):
     api = blueprint('api', __name__)
 
     @api.route('/api/tasks', methods=['GET', 'POST'])
