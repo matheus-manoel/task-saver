@@ -1,3 +1,6 @@
+from flask import render_template
+
+
 def create_visual_routes(blueprint, request, models):
     visual = blueprint(
                     'visual', __name__,
@@ -5,8 +8,8 @@ def create_visual_routes(blueprint, request, models):
                     template_folder='templates'
     )
 
-    @visual.route('/', methods=['GET', 'POST'])
+    @visual.route('/', methods=['GET'])
     def daily():
-        return "yeahhh"
+        return render_template('index.html')
 
     return visual

@@ -7,7 +7,7 @@ from server import models
 
 
 def create_app():
-    app = Flask(__name__)
+    app = Flask(__name__, static_folder=None)
     app.register_blueprint(create_api_routes(Blueprint, request, utils, models))
     app.register_blueprint(create_visual_routes(Blueprint, request, models))
 
