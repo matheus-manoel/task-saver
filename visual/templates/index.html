@@ -6,8 +6,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Task Saver</title>
 
+        <!-- Jquery -->
+        
+        <script type="text/javascript" src="{{ url_for('visual.static', filename='js/jquery-3.2.1.min.js') }}"></script>
+        
+        <!-- Chart.js -->
+        <script type="text/javascript" src="{{ url_for('visual.static', filename='js/Chart.bundle.min.js') }}"></script>
+
         <!-- Bootstrap -->
         <link rel="stylesheet" type="text/css" href="{{ url_for('visual.static', filename='css/bootstrap.min.css') }}">
+        <script type="text/javascript" src="{{ url_for('visual.static', filename='js/bootstrap.min.js') }}"></script>
+
+        <!-- Custom css -->
         <link rel="stylesheet" type="text/css" href="{{ url_for('visual.static', filename='css/custom.css') }}"> 
         
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -16,6 +26,7 @@
             <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
             <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
+
     </head>
     
     <body>
@@ -28,14 +39,93 @@
         <!-- Entrie -->
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-8">
-                    <h2>oolaaaa</h2>
-                    <p>paragrah djasif dlkfasjçl dajkflç</p>
+                <div class="col-xs-12 col-sm-8">
+                
+                    <div class="panel panel-success">
+                        <div class="panel-heading text-center">18/07/2017 - Hoje
+                        </div>
+                          <div class="panel-body">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-9">
+                                    <input class="checkbox-input" type="checkbox" value=""><span class="task-name"/>Treinamento</span>
+                                    <span class="task-time pull-right">2:30</span>
+                                    <br>
+                                    <input class="checkbox-input" type="checkbox" value=""><span class="task-name"/>Estudo</span>
+                                    <span class="task-time pull-right">0:32</span>
+                                    <br>
+                                    <input class="checkbox-input" type="checkbox" value=""><span class="task-name"/>Pigas</span>
+                                    <span class="task-time pull-right">2:30</span>
+                                    <br>
+
+                                </div>
+                                <div class="col-xs-12 col-sm-3"> 
+                                    <div class="center-content">
+                                        <button type="button" class="btn btn-success btn-lg">Send to ActiTime</button>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        </div>
+                    </div>
                 </div>
-                <div class="col-sm-4">
-                    <span class="glyphicon glyphicon-signal logo">
+
+                <div class="col-xs-12 col-sm-4">
+                    <div class="center-content" id="chart1-wrapper">
+                        <canvas id="myChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!!-- Entry 2 -->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 col-sm-8">
+                
+                    <div class="panel panel-success">
+                      <div class="panel-heading text-center">18/07/2017 - Hoje</div>
+                          <div class="panel-body">
+                              <p><label class="checkbox-inline"><input type="checkbox" value="">Treinamento 10</label></p>
+                            <br>
+                            <label class="checkbox-inline"><input type="checkbox" value="">Estudo 10</label>
+                          </div>
+                    </div>
+                
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                    kjdfslaçjdfkas                
                 </div>
         </div>
+
+        <script>
+Chart.defaults.global.maintainAspectRatio = false;
+var canvas = document.getElementById("myChart");
+var ctx = canvas.getContext('2d');
+
+var parent = document.getElementById("chart1-wrapper");
+
+canvas.width = parent.offsetWidth;
+canvas.height = parent.offsetHeight;
+
+var myChart = new Chart(ctx, {
+  type: 'pie',
+  data: {
+    labels: ["M", "T", "W", "T", "F", "S", "S"],
+    datasets: [{
+      backgroundColor: [
+        "#2ecc71",
+        "#3498db",
+        "#95a5a6",
+        "#9b59b6",
+        "#f1c40f",
+        "#e74c3c",
+        "#34495e"
+      ],
+      data: [12, 19, 3, 17, 28, 24, 7]
+    }]
+  }
+});
+</script>
 
     </body>
 </html>

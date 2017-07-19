@@ -3,11 +3,50 @@ body {
 }
 
 .jumbotron {
-    background-color: #44bb55;
+    background-color: #27A937;
     color: #ffffff;
     padding: 100px 25px;
 }
 
 .container-fluid {
     padding: 60px 50px;
+}
+
+.container-fluid .jumbotron {
+    background-color: #44bb55;	
+}
+
+.panel-heading {
+	font-weight: bold;
+	font-size: 40px;
+}
+
+.panel-body {
+	font-size: 30px;
+}
+
+.task-name {
+}
+
+.task-time {
+}
+
+.checkbox-input {
+    margin-right: 50px; 
+}
+
+@media screen and (min-width: 767px) {
+    .row {
+        display: flex;
+    }
+}
+
+.center-content {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+
+.center-content .btn {
+    align-self: center;
 }
