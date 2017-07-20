@@ -41,6 +41,10 @@ body {
     }
 }
 
+@media screen and (min-width: 1194px) {
+   
+}
+
 .center-content {
     display: flex;
     justify-content: center;
